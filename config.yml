@@ -1,5 +1,17 @@
 ---
-- hosts: All
+- hosts: Ubuntu
   become: true
   roles:
-    - elk
+    - elasticsearch
+    - filebeat
+    - java
+    - kibana
+    - metricbeat
+
+- hosts: CentOS
+  become: true
+  roles:
+    - elasticsearch_centos
+    - kibana_centos
+    - metricbeat_centos
+    - nginx
